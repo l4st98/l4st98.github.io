@@ -10,12 +10,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', sans-serif;
     color: #fff;
     overflow: hidden;
 }
 
-.video-container {
+.background {
     position: fixed;
     top: 0;
     left: 0;
@@ -24,14 +24,13 @@ body {
     z-index: -2;
 }
 
-.video-container img {
+.background img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
 }
 
-.background-overlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,81 +40,72 @@ body {
     z-index: -1;
 }
 
-
-.card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 320px;
-    padding: 30px;
-    border-radius: 4px; 
+.profile-card {
+    background: rgba(18, 18, 18, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 360px;
+    padding: 45px 25px;
+    border-radius: 20px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    animation: fadeIn 0.8s ease-in-out;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.7s ease-in-out;
 }
 
-.profile-wrap {
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
     margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.pfp {
-    width: 100px;
-    height: 100px;
-    border: 1px solid #fff;
-    padding: 5px;
-    filter: grayscale(100%);
-    transition: 0.3s;
-}
-
-.card:hover .pfp {
-    filter: grayscale(0%);
-    border-color: #00f2ff;
-}
-
-.role {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #888;
-    margin-bottom: 8px;
-}
-
-h1 {
-    font-size: 2.5rem;
+.name {
+    font-size: 1.6rem;
     font-weight: 700;
-    letter-spacing: -2px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
 }
 
-.details {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 30px;
+.description {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 35px;
 }
 
-
-.social-links {
+.links-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
-.social-links a {
+.button {
     text-decoration: none;
     color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 12px;
-    transition: 0.2s;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: all 0.2s ease;
 }
 
-.social-links a:hover {
-    background: #fff;
-    color: #000;
+.button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
-
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
